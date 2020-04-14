@@ -38,7 +38,8 @@ app.use('/api', require('./route/index.js')());
 app.use(express.static('public'))
 
 mongoose.connect(
-    `${config.db.prefix}${config.db.host}:${config.db.port}/${config.db.name}`,
+    // `${config.db.prefix}${config.db.host}:${config.db.port}/${config.db.name}`,
+    process.env.MONGODB_URI,
     { useNewUrlParser: true }
 );
 
